@@ -2,11 +2,14 @@
     "train_micro_batch_size_per_gpu": 1,
     "gradient_accumulation_steps": 1,
     "gradient_clipping": 0.1,
+    "bf16": {
+      "enabled": true
+    },
     "zero_optimization": {
       "stage": 2,
-      "contiguous_gradients": false,
       "overlap_comm": true,
       "reduce_scatter": true,
+      "contiguous_gradients": false,
       "reduce_bucket_size": 4e7,
       "allgather_bucket_size": 1e8,
       "load_from_fp32_weights": false
@@ -16,9 +19,6 @@
       "pin_memory": true
     },
     "zero_allow_untested_optimizer": true,
-    "bf16": {
-      "enabled": true
-    },
     "optimizer": {
       "type": "Adam",
       "params": {
@@ -38,4 +38,5 @@
     },
     "wall_clock_breakdown": false
   }
+
   
